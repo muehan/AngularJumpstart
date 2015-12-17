@@ -1,0 +1,53 @@
+app.js:
+
+var app = angular.module("jumpstart", ['ngRoute']);
+
+app.config(function ($routeProvider) {
+    $routeProvider
+        .when('/',
+                {
+                    templateUrl: '/app/partials/home.html',
+                })
+        .when('/about',
+                {
+                    templateUrl: '/app/partials/about.html',
+                    controller: 'AboutController'
+                })
+        .when('/services',
+                {
+                    templateUrl: '/app/partials/services.html',
+                    controller: 'ServicesController'
+                })
+        .when('/contact',
+                {
+                    templateUrl: '/app/partials/contact.html',
+                    controller: 'ContactController'
+                })
+        .otherwise({ redirectTo: ('/') });
+});
+
+__________________________
+
+index.html
+
+<div class="content jambatron">
+    <div data-ng-view="">
+
+    </div>
+</div>
+
+__________________________
+
+/app/partials/home.html
+
+<!-- Intro Section -->
+<section id="intro" class="intro-section" style="margin-top: 35px;">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <h1>Getting Start</h1>
+                <p>If you see this text you made id it!</p>
+            </div>
+        </div>
+    </div>
+</section>
