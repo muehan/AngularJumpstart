@@ -1,0 +1,53 @@
+
+(function () {
+    "use strict";
+
+    app.factory("customerService", ['$http', function ($http) {
+
+            var factory = {};
+        
+            factory.GetCustomer = function(){
+                var customer = {
+                    name: "Muster",
+                    prename: "Hans"
+                }
+                
+                return customer;
+            }
+
+
+            return factory;
+        }
+    ]);
+
+})();
+
+_____________________
+
+
+(function () {
+    "use strict";
+
+    app.controller("ServicesController", function ($scope, customerService) {
+
+        $scope.test = "Services";
+        
+        $scope.customer = customerService.GetCustomer();
+
+    });
+})();
+
+_____________________
+
+<!-- Intro Section -->
+<section id="intro" class="intro-section" style="margin-top: 35px;">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <h1>Services</h1>
+                <p>{{ test }}</p>
+                <p>{{ customer.name }} {{ customer.prename }}</p>
+            </div>
+        </div>
+    </div>
+</section>
