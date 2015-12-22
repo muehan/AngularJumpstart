@@ -1,0 +1,37 @@
+<!-- Intro Section -->
+<section id="intro" class="intro-section" style="margin-top: 35px;" ng-controller="AboutController">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <h1>ng-model</h1>
+                <input type="text" ng-model="demo"/>
+                <p>{{ demo }}</p>
+            </div>
+        </div>
+        
+        <div class="row">
+             <div class="col-lg-12">
+                <h1>ng-show</h1>
+                <input type="checkbox" ng-model="checked"/>
+                <p ng-show="checked">Can you see me?</p>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-lg-12">
+                <h1>ng-click</h1>
+                <p ng-click="clickExample()">click me if you're brave enough</p>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-lg-12">
+                <h1>ng-repeat | with Filter</h1>
+                <input type="text" ng-model="text"/>
+                <ul>
+                    <li ng-repeat="user in users | filter:text">{{ user.username }} - {{ user.name }}</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>

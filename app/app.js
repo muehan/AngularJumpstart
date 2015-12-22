@@ -1,1 +1,26 @@
-var app = angular.module("jumpstart", []);
+var app = angular.module("jumpstart", ['ngRoute']);
+
+app.config(function ($routeProvider) {
+    $routeProvider
+        .when('/',
+                {
+                    templateUrl: '/app/partials/home.html',
+                    controller: 'HomeController'
+                })
+        .when('/about',
+                {
+                    templateUrl: '/app/partials/about.html',
+                    controller: 'AboutController'
+                })
+        .when('/services',
+                {
+                    templateUrl: '/app/partials/services.html',
+                    controller: 'ServicesController'
+                })
+        .when('/contact',
+                {
+                    templateUrl: '/app/partials/contact.html',
+                    controller: 'ContactController'
+                })
+        .otherwise({ redirectTo: ('/') });
+});
